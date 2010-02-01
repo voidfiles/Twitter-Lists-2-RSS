@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>Twitter / {{username}} list {{listname}}</title>
+    <link>http://twitter.com/{{username}}/{{listname}}</link>
+    <atom:link type="application/rss+xml" href="http://twiterlist2rss.appspot.com/{{username}}/lists/{{listname}}/statuses.rss" rel="self"/>
+    <description>Twitter list updates from {{username}} {{listname}}.</description>
+    <language>en-us</language>
+    <ttl>40</ttl>
+  {% for item in json_data %}
+  <item>
+    <title>{{item.user.screen_name}}: {{ item.text|fix_ampersands }}</title>
+    <description>{{item.user.screen_name}}: {{ item.text|fix_ampersands}}</description>
+    <pubDate>{{item.created_at|date:"r"}}</pubDate>
+    <guid>http://twitter.com/{{item.user.screen_name}}/statuses/{{item.id}}</guid>
+    <link>http://twitter.com/{{item.user.screen_name}}/statuses/{{item.id}}</link>
+  </item>
+  {% endfor %}
+  </channel>
+</rss>

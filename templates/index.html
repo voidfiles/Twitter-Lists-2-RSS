@@ -1,0 +1,62 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+ "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+   <title>Twitter Lists To RSS</title>
+   <meta name="description" content="A service that will convert a twitter list into rss.">
+   <link rel="stylesheet" href="http://yui.yahooapis.com/2.7.0/build/reset-fonts-grids/reset-fonts-grids.css" type="text/css">
+   <link rel="stylesheet" href="/media/css/my.css" type="text/css" media="screen" title="no title" charset="utf-8">
+</head>
+<body>
+<div id="doc" class="yui-t7">
+    <div id="hd" role="banner">
+        <h1 class="s0 font_replace margin_top_1em">Twitter Lists 2 RSS</h1>
+        <h2 class="s4">Follow me on twitter <a href="http://twitter.com/voidfiles" style="color:black;">@voidfiles</a></h3>
+    </div>
+    <div id="bd" role="main">
+        <div class="yui-gc margin_top_1_5em">
+            <div class="yui-u first">
+                {% if posted %}
+                <h2 class="s3 font_replace">RSS Feed Created</h2>
+                <ul class="s5 margin_bottom_1em">
+                    <dl>
+                        <dt>Twitter URL:</dt>
+                        <dd><a href="{{og}}">{{og}}</a></dd>
+                        <dt>RSS URL:</dt>
+                        <dd><a href="{{rss_url}}">{{rss_url}}</a></dd>
+                    </dl>
+                </ul>
+                {% endif %}
+                <h2 class="s3 font_replace">Enter the URL of a twitter list below</h2>
+                <form name="twitter_list_entry" method="POST" action="/">
+                    <input name="url" value="http://twitter.com" class="margin_top_1em s5"></input>
+                    <button type="submit" value="submit" class="margin_top_1em s5" style="padding:5px 10px;">Get an RSS Feed</button>
+                </form>
+                <h3 class="s4 margin_top_1em">How To:</h3>
+                <ol class="s5">
+                   <li>Find a list, try <a href="http://listorious.com/">http://listorious.com/</a></li>
+                   <li>Copy and paste the url to the list above</li>
+                </ol>
+            </div>
+            <div class="yui-u">
+
+                <h3 class="s4" style="padding-left:10px;">All problems: <a href="http://twitter.com/voidfiles">@voidfiles</a></h3>
+
+            </div>
+        </div>
+    </div>
+   <div id="ft" role="contentinfo" class="margin_top_3em">
+       <p class="s1">Part of the <a href="http://alexkessinger.net/story/tastestalkr-network" style="color:black;">TasteStalkr Network</a></p>
+   </div>
+</div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-197961-21");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
